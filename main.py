@@ -15,6 +15,10 @@ def index():
 # def get_blog_type(type: BlogType):
 #     return {'message': f'Blog type: {type.value}'}
 
+@app.get('/blog/all')
+def get_all_blog():
+    return {'message': 'All blogs provided'}
+
 class BlogType(str, Enum):
     short = 'short'
     story = 'story'
@@ -24,10 +28,6 @@ class BlogType(str, Enum):
 def get_blog_type(type: BlogType):
     return {"message": f"Blog type: {type.value}"}
 
-
-@app.get('/blog/all')
-def get_all_blog():
-    return {'message': 'All blogs provided'}
 
 @app.get('/blog/{id}')
 def get_blog(id: int):
