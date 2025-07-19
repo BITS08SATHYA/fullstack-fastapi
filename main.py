@@ -25,10 +25,20 @@ def get_blog_type(type: BlogType):
     return {"message": f"Blog type: {type.value}"}
 
 
+@app.get('/blog/all')
+def get_all_blog():
+    return {'message': 'All blogs provided'}
+
+@app.get('/blog/{id}')
+def get_blog(id: int):
+    return {'message' : f'Blog with id: {id}'}
+
 
 # @app.get('/blog/all')
-# def get_all_blog():
-#     return {'message': 'All blogs provided'}
+# def get_all_blogs(page=1, page_size=10):
+#     return {'message': f'All {page_size} blogs on page {page}'}
+
+
 #
 # @app.get('/blog/{id}')
 # def get_blog(id: int):
