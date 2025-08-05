@@ -1,6 +1,8 @@
 from fastapi import FastAPI
+from db.database import engine
 from router import blog_get
 from router import blog_post
+from db import models
 
 app = FastAPI()
 app.include_router(blog_get.router)
@@ -11,4 +13,4 @@ def index():
 
 
 
-
+models.Base.metadata.create_all(engine)

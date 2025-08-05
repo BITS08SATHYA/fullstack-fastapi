@@ -11,7 +11,7 @@ router = APIRouter(prefix='/blog', tags=['blog'])
          description="This api call simulates fetching all blogs",
          response_description='The list of available blogs'
          )
-def get_all_blogs(page=1, page_size: Optional[int] = None, req_parameter: dict = Depends(required_functionality)):
+def get_blogs(page=1, page_size: Optional[int] = None, req_parameter: dict = Depends(required_functionality)):
     return {'message': f'All {page_size} blogs on page {page}', 'req': req_parameter}
 
 class BlogType(str, Enum):
